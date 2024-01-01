@@ -1,0 +1,19 @@
+// SECTION CATEGORY
+#category {
+    padding: 100px 0;
+    .categories {
+      @include display();
+      .category {
+        p {
+          font-size: $base-font-size + 5px;
+          margin-top: $base-margin;
+          font-weight: $base-font-weight;
+        }
+        img {
+          width: 35px;
+          filter: invert(51%) sepia(18%) saturate(1409%) hue-rotate(347deg)
+            brightness(92%) contrast(78%);
+        }
+      }
+    }
+  }

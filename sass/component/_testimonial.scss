@@ -1,0 +1,79 @@
+// Testimonial
+#testimonial {
+    padding: 100px 0;
+    .testimonial_title {
+      text-align: center;
+      h3 {
+        @extend %btn_h3;
+      }
+    }
+    .swiper {
+      padding: 50px 0;
+      .swiper-wrapper {
+        .swiper-slide {
+          .swiper-slide-content {
+            @include display($fd: column, $jc: center);
+            text-align: center;
+          }
+          img {
+            display: block;
+            width: 25%;
+            height: 100%;
+            object-fit: cover;
+          }
+          p {
+            font-size: $base-font-size - 1px;
+            line-height: 25px;
+            margin: $base-margin + 30px 0 $base-margin 0;
+          }
+          h4 {
+            font-size: $base-font-size + 2px;
+            font-weight: $base-font-weight;
+            margin-bottom: $base-margin - 10px;
+          }
+        }
+      }
+      .swiper-btn-next {
+        @extend %swiper-btn;
+        right: 30%;
+      }
+      .swiper-btn-prev {
+        @extend %swiper-btn;
+        left: 30%;
+      }
+      &:hover {
+        .swiper-btn-prev {
+          @extend %swiper-btn-hover;
+          left: 35%;
+        }
+        .swiper-btn-next {
+          @extend %swiper-btn-hover;
+          right: 35%;
+        }
+      }
+  
+      .swiper-slide-active {
+        &::after {
+          @extend %after;
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.801),
+            rgba(247, 247, 247, 0.725),
+            rgba(255, 255, 255, 0.504)
+          );
+        }
+      }
+      .swiper-slide-next {
+        & ~ .swiper-slide::after {
+          @extend %after;
+          background: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.801),
+            rgba(247, 247, 247, 0.725),
+            rgba(255, 255, 255, 0.504)
+          );
+        }
+      }
+    }
+  }
+  // Testimonial End

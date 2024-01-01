@@ -1,0 +1,59 @@
+// ABOUT US
+#about_us {
+    .about_us {
+      @include display();
+      .about_us_img {
+        width: 70%;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      .about_us_content {
+        @include display($fd: column, $ai: flex-start);
+        padding: $base-padding + 50px $base-padding + 30px;
+        h3 {
+          @extend %btn_h3;
+        }
+        p {
+          font-size: $base-font-size;
+          color: lighten($black, 40%);
+          margin: $base-margin 0;
+          line-height: 25px;
+        }
+        .numbers {
+          @include display($gap: 0 200px);
+          margin-bottom: $base-margin + 20px;
+          .number {
+            @include display();
+            img {
+              width: 30px;
+              height: 30px;
+              margin-right: $base-margin + 5px;
+              filter: invert(51%) sepia(18%) saturate(1409%) hue-rotate(347deg)
+                brightness(92%) contrast(78%);
+            }
+            .number_text {
+              p {
+                margin: 0 0 $base-margin 0;
+                font-size: $base-font-size + 20px;
+                font-weight: $base-font-weight;
+                color: $base-color;
+              }
+              span {
+                font-size: $base-font-size;
+              }
+            }
+          }
+        }
+        button {
+          @include button();
+          &:hover {
+            background-color: $base-color-hover;
+          }
+        }
+      }
+    }
+  }
+  // ABOUT US END

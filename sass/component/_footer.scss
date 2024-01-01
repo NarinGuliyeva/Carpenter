@@ -1,0 +1,103 @@
+
+// FOOTER
+footer {
+    padding: $base-padding + 20px;
+    background-color: $black-light;
+    .footer {
+      color: $white;
+      img {
+        width: 15px;
+        height: 15px;
+        filter: invert(1);
+      }
+      h4 {
+        font-size: $base-font-size + 8px;
+        font-weight: $base-font-weight;
+        margin-bottom: $base-margin + 5px;
+      }
+      ul {
+        @include display($fd: column, $ai: flex-start, $gap: 15px 0);
+        min-width: 200px;
+        li {
+          max-height: 15px;
+          a {
+            color: $white;
+            font-size: $base-font-size - 2px;
+            transition: .5s;
+            i {
+              margin-right: $base-margin - 15px;
+              font-size: 13px;
+            }
+          }
+          &:hover {
+            a {
+              font-size: $base-font-size - 1px;
+              color: $base-color;
+              letter-spacing: .5px;
+            }
+          }
+        }
+        .icons {
+          @include display($gap: 0 5px);
+          margin-top: 15px;
+          a {
+            @include display($fd: row , $jc:center);
+            width: 35px;
+            height: 35px;
+            border: 1px solid $white;
+            &:hover {
+              background-color: $white;
+              img {
+                filter: invert(51%) sepia(18%) saturate(1409%) hue-rotate(347deg)
+                  brightness(92%) contrast(78%);
+              }
+            }
+          }
+        }
+      }
+      p {
+        width: 300px;
+        line-height: 20px;
+        margin-bottom: 25px ;
+      }
+      .btn-input {
+        position: relative;
+        input {
+          width: 100%;
+          padding: $base-padding - 3px  $base-padding + 5px ;
+          outline: none;
+        }
+        button {
+          @include button($padd:10px 15px);
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          &:hover {
+            background-color: $base-color-hover;
+            border:  1px solid $base-color-hover;
+          }
+        }
+      }
+    }
+  p {
+    color: $white;
+    padding-top: $base-padding;
+    a{
+      transition: .4s;
+      color: $white;
+      border-bottom: 1px solid white;
+      &:hover {
+        color: $base-color;
+      }
+    }
+  }
+  }
+  
+  .all-footer {
+    @include display($ai:flex-start);
+    border-bottom: 1px solid rgb(68, 68, 68);
+    padding-bottom: $base-padding + 20px;
+  }
+  
+  // FOOTER END

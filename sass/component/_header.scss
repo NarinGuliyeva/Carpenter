@@ -1,0 +1,192 @@
+@mixin display($fd: row, $ai: center, $jc: space-between, $gap: 0) {
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: $gap;
+}
+// MIXIN
+@mixin button(
+  $bg-color: $base-color,
+  $padd: $base-padding $base-padding + 30px,
+  $color: $white,
+  $fs: $base-font-size
+) {
+  background-color: $bg-color;
+  padding: $padd;
+  color: $color;
+  font-size: $fs;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: 0.3s;
+  border: 1px solid $bg-color;
+}
+// MIXIN
+// Extend POSITION
+%position {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+// EXTEND BTN
+%btn {
+  position: absolute;
+  bottom: 0 !important;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid $white;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s;
+}
+%btn-hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+// EXTEND BTN H3
+%btn_h3 {
+  font-size: $base-font-size + 30px;
+  font-weight: $base-font-weight + 200;
+}
+// EXTEND
+%swiper-btn {
+  color: $base-color;
+  position: absolute;
+  top: 20%;
+  font-size: 30px;
+  z-index: 7;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+%swiper-btn-hover {
+  opacity: 1;
+  visibility: visible;
+}
+// EXTEND AFTER
+%after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+header {
+  @include display($ai: normal, $fd: column, $jc: normal);
+  .nav {
+    .icon {
+      width: 15px;
+      height: 15px;
+      object-fit: contain;
+      margin-right: 10px;
+      filter: invert(51%) sepia(18%) saturate(1409%) hue-rotate(347deg)
+        brightness(92%) contrast(78%);
+    }
+    @include display($ai: normal, $fd: column, $jc: normal);
+    .nav_top {
+      @include display();
+      padding: $base-padding $base-padding + 20;
+      color: lighten($black, 40%);
+      font-size: $base-font-size - 2px;
+      .address_date {
+        @include display($gap: 0 25px);
+        p {
+          @include display();
+        }
+      }
+      .phone_ws {
+        @include display($gap: 0 40px);
+        ul {
+          @include display($gap: 0 10px);
+        }
+      }
+    }
+    .nav_bottom {
+      background-color: $white;
+      transition: .5s;
+      @include display();
+      .logo {
+        padding-left: $base-padding + 20;
+        font-size: $base-font-size * 2;
+        font-weight: $base-font-weight;
+        a {
+          color: $base-color;
+        }
+      }
+      .nav_bottom_right {
+        @include display($gap: 0 25px);
+        nav {
+          ul {
+            @include display($gap: 0 25px);
+            li {
+              a {
+                @include display();
+                font-size: $base-font-size;
+                text-transform: uppercase;
+                color: $black;
+                transition: 0.3s;
+                &:hover {
+                  color: $base-color;
+                }
+              }
+              &:first-child {
+                a {
+                  color: $base-color;
+                }
+              }
+            }
+          }
+        }
+        button {
+          @include display();
+          @include button($padd: $base-padding + 10 $base-padding + 40);
+
+          img {
+            margin-left: 10px;
+            filter: invert(1);
+          }
+          &:hover {
+            background-color: $base-color-hover;
+            border: 1px solid $base-color-hover;
+          }
+        }
+      }
+    }
+    .nav_bottom_active {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 8;
+      animation-name: fadeInUp;
+      animation-duration: 1s;
+      // keyframes
+      @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            top: -50px;
+          }
+          
+          to {
+            opacity: 1;
+            top: 0;
+          }
+        }
+          // keyframes
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
